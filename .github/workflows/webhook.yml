@@ -1,0 +1,9 @@
+name: Webhook Dispatch
+on:
+  repository_dispatch:
+    types: [custom-webhook]
+jobs:
+  webhook-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Payload: ${{ toJson(github.event.client_payload) }}"
