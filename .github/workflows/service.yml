@@ -1,0 +1,12 @@
+name: Service Container
+on: workflow_dispatch
+jobs:
+  test-db:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15
+        env: { POSTGRES_PASSWORD: pass }
+        ports: [ 5432:5432 ]
+    steps:
+      - run: echo "Database is running"

@@ -1,0 +1,12 @@
+name: Multi OS
+on: push
+jobs:
+  ubuntu:
+    runs-on: ubuntu-latest
+    steps: [ { run: echo "OS: ${{ runner.os }}" } ]
+  windows:
+    runs-on: windows-latest
+    steps: [ { run: echo "OS: ${{ runner.os }}" } ]
+  macos:
+    runs-on: macos-latest
+    steps: [ { run: echo "OS: ${{ runner.os }}" } ]
