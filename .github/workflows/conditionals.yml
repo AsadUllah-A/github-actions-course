@@ -1,0 +1,12 @@
+name: Conditionals
+on: push
+jobs:
+  cond-job:
+    runs-on: ubuntu-latest
+    steps:
+      - if: github.ref == 'refs/heads/main'
+        run: echo "Main branch"
+      - if: success()
+        run: echo "Success"
+      - if: always()
+        run: echo "Always runs"

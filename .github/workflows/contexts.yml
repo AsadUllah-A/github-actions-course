@@ -1,0 +1,9 @@
+name: Context Demo
+on: push
+jobs:
+  context-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Actor: ${{ github.actor }}"
+      - run: echo "OS: ${{ runner.os }}"
+      - run: echo "Repo: ${{ github.repository }}"
